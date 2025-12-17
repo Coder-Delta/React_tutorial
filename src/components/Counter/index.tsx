@@ -14,9 +14,13 @@ const Counter: React.FC = () => {
     }, [])
 
     //Empty array mean whole components
+    //if dependancy arr has some value then the change will be happen
 
     useEffect(() => {
-      console.log("Counter mounted updated!")
+      console.log("Counter mounted updated!", Counter)
+      return () => {
+        console.log("counter updated" ,Counter)
+      }
     }, [Counter])
 
     function countIncrementer (){
